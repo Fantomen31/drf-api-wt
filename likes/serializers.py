@@ -15,10 +15,10 @@ class LikeSerializer(serializers.ModelSerializer):
             'id', 'owner', 'post', 'created_at'
         ]
 
-    def create(self, calidated_data):
+    def create(self, validated_data):
         try:
             return super().create(validated_data)
         except IntegrityError:
-            raise serailizers.ValidationError({
+            raise serializers.ValidationError({
                 'detail': 'possible duplicate'
             })

@@ -36,12 +36,11 @@ SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io',
-    ]
+    '8000-fantomen31-drfapiwt-keeid711gcg.ws-eu116.gitpod.io'
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io',
-    'http://8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io/media/images/Ashitaka.jpg',
+    'https://8000-fantomen31-drfapiwt-keeid711gcg.ws-eu116.gitpod.io',
 ]
 
 

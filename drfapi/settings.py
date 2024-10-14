@@ -19,7 +19,7 @@ if os.path.exists('env.py'):
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL' : os.environ.get('CLOUDINARY_URL')
 }
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://res.cloudinary.com/deb2i30bg/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,8 +36,13 @@ SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io'
+    '8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io',
     ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io',
+    'http://8000-fantomen31-drfapiwt-fcrr28ezn3x.ws-eu116.gitpod.io/media/images/Ashitaka.jpg',
+]
 
 
 # Application definition
@@ -51,6 +56,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
 
     'profiles',
 ]

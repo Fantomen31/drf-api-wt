@@ -36,11 +36,11 @@ SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fantomen31-drfapiwt-keeid711gcg.ws-eu116.gitpod.io'
+    '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-fantomen31-drfapiwt-keeid711gcg.ws-eu116.gitpod.io',
+    'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
 ]
 
 
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'rest_framework',
+    'django_filters',
 
     'profiles',
     'posts',

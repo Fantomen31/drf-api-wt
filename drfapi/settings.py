@@ -61,7 +61,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
-    'localhost', 'drf-api-wt.herokuapp.com'
+    'localhost', 'drf-api-fantomen-82373067f7b7.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [

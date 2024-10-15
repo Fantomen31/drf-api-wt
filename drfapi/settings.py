@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -59,14 +60,15 @@ SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io'
+    '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
+    'localhost', 'drf-api-wt.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
 ]
 
-
+SECRET_KEY = 'F*CKY*U'
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,6 +89,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
     'profiles',
     'posts',
     'comments',
@@ -129,13 +132,17 @@ WSGI_APPLICATION = 'drfapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+if 'DEV' in os.environ:
+     DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.sqlite3',
+             'NAME': BASE_DIR / 'db.sqlite3',
+         }
+     }
+else:
+     DATABASES = {
+         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

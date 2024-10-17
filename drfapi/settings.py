@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import re
 
 if os.path.exists('env.py'):
     import env
@@ -58,9 +59,10 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False   
 
 ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
     '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
     'localhost', 'drf-api-fantomen-82373067f7b7.herokuapp.com'
 ]
@@ -69,10 +71,16 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://3000-fantomen31-moments-ft8agkaf3kv.ws-eu116.gitpod.io",
-    # Add other allowed origins as needed
-]
+# CORS configuration
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "https://your-production-domain.com",  # Production domain(s)
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 

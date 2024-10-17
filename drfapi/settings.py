@@ -69,6 +69,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 SECRET_KEY = 'F*CKY*U'
 # Application definition
 
@@ -99,6 +101,7 @@ INSTALLED_APPS = [
 ]
 SITE_ID = 1
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

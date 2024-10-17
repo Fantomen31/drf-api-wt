@@ -74,6 +74,15 @@ CORS_ALLOWED_ORIGINS = [
     # Add other allowed origins as needed
 ]
 
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
 SECRET_KEY = 'F*CKY*U'
 # Application definition
 

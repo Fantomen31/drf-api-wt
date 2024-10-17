@@ -69,7 +69,10 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://3000-fantomen31-moments-ft8agkaf3kv.ws-eu116.gitpod.io",
+    # Add other allowed origins as needed
+]
 
 SECRET_KEY = 'F*CKY*U'
 # Application definition

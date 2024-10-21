@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import re
 
 if os.path.exists('env.py'):
     import env
@@ -62,7 +63,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
-    'localhost', 'drf-api-fantomen-82373067f7b7.herokuapp.com'
+    'localhost', os.environ.get('ALLOWED_HOST'),
 ]
 
 CSRF_TRUSTED_ORIGINS = [

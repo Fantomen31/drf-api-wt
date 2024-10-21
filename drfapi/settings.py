@@ -59,7 +59,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',

@@ -113,6 +113,11 @@ MIDDLEWARE = [
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://3000-fantomen31-moments-hrxb20qviwn.ws.codeinstitute-ide.net/",  # Frontend URL
+    "https://moments-fantomen-93bd3d735c33.herokuapp.com/",
+    "http://localhost:3000",  # For local development
+]
 
 CORS_ALLOW_CREDENTIALS = True
 

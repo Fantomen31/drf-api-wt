@@ -63,14 +63,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
-    'https://moments-fantomen-93bd3d735c33.herokuapp.com/',
-    'localhost', 
+    'localhost',
     os.environ.get('ALLOWED_HOST'),
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
-    'https://moments-fantomen-93bd3d735c33.herokuapp.com/',
 ]
 
 SECRET_KEY = 'F*CKY*U'

@@ -71,7 +71,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
 ]
 
-SECRET_KEY = 'F*CKY*U'
 # Application definition
 
 INSTALLED_APPS = [

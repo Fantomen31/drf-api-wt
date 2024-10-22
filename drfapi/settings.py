@@ -63,7 +63,6 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
-    'https://drf-api-fantomen-82373067f7b7.herokuapp.com',
     'localhost',
     os.environ.get('ALLOWED_HOST'),
 ]
@@ -113,15 +112,10 @@ MIDDLEWARE = [
     # 'allauth.account.middleware.AccountMiddleware',
 ]
 
-
-
-if 'CLIENT_ORIGIN' in os.environ:
-     CORS_ALLOWED_ORIGINS = [
-         os.environ.get('CLIENT_ORIGIN')
-     ]
-else: 
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\\.codeinstitute-ide\\.net$",
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 
 

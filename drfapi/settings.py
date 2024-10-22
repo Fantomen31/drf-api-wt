@@ -56,18 +56,19 @@ REST_AUTH_SERIALIZERS = {
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wwkigw)9%2!u45d-zgg3ahqbec93+$l4k!0u8tn+q@=x_x-3(1'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
-    'localhost', os.environ.get('ALLOWED_HOST'),
+    '8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
+    'localhost', 
+    os.environ.get('ALLOWED_HOST'),
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-fantomen31-drfapiwt-0pgm1ahpvek.ws-eu116.gitpod.io',
+    'https://8000-fantomen31-drfapiwt-bnfltaqquxj.ws.codeinstitute-ide.net',
 ]
 
 SECRET_KEY = 'F*CKY*U'
